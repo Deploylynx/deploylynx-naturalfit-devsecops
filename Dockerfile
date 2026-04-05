@@ -4,16 +4,16 @@ FROM node:18-alpine
 # Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Copy package.json from app folder
+COPY app/package*.json ./
 
 # Install dependencies
 RUN npm install
 
-# Copy rest of the app
-COPY . .
+# Copy the rest of the app
+COPY app/. .
 
-# Expose the port
+# Expose port
 EXPOSE 3000
 
 # Start the app
