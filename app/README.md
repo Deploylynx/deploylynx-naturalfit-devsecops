@@ -76,18 +76,7 @@ Workflow file: .github/workflows/devsecops.yml
 Optional: Docker Compose
 docker-compose up --build
 
-## 🖥️ Screenshots
-
-Local site:
-
-![Local Site](screenshots/local.png)
-
-Deployed site:
-
-![Deployed Site](screenshots/deployed.png)
-
 ---
-
 ## 🖥️ Screenshots
 
 Local site:
@@ -96,7 +85,7 @@ Local site:
 
 Deployed site:
 
-![Deployed Site](screenshots/deployed.png)
+![Deployed Site](screenshots/vercel.png)
 
 ---
 
@@ -115,6 +104,8 @@ Trivy scans Docker images automatically in GitHub Actions workflow
 
 Dockerfile Highlights:
 
+---
+
 🔒 DevSecOps Implementation
 
 Express Security Middleware (Helmet):
@@ -127,6 +118,8 @@ Security & Repo Management:
 .env file ignored in .gitignore
 Unnecessary files ignored: node_modules, .DS_Store, Thumbs.db, *.log
 Trivy scans Docker images automatically in GitHub Actions workflow
+
+---
 
 Dockerfile Highlights:
 Base image: node:18-alpine
