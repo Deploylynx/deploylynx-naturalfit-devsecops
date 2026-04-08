@@ -82,7 +82,7 @@ docker-compose up --build
 
 Local site:
 
-<img src="app/screenshots/local.png" alt="Local site" width="800" />
+<img width="1760" height="2015" alt="local" src="https://github.com/user-attachments/assets/46fb9cc7-ac76-4f89-a0a5-10ed51e8d32b" />
 
 Deployed site:
 
