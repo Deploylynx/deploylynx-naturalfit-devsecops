@@ -1,153 +1,102 @@
 # DevSecOps Pipeline - Natural Fit
 
-A DevSecOps CI/CD pipeline project developed by **Hina Atif** for DeployLynx.com as part of a project-based assignment.  
-This project demonstrates a full DevSecOps workflow using **Node.js**, **Express**, **Docker**, **GitHub Actions**, and **Trivy security scanning**.
+A DevSecOps CI/CD pipeline project developed by **Hina Atif** for **DeployLynx.com** as part of a professional project-based assignment. This project demonstrates a full DevSecOps workflow using **Node.js**, **Express**, **Docker**, **GitHub Actions**, and **Trivy security scanning**.
 
 ---
 
 ## 📝 Project Overview
 
-**Objective:**  
-Build and secure a Node.js application with a CI/CD pipeline, incorporating automated builds, dependency scanning, and containerization.
+**Objective:** Build and secure a Node.js application with a production-ready CI/CD pipeline, incorporating automated builds, dependency scanning, and containerization.
 
 **Tech Stack & Tools Used:**
 
-- **Node.js 18 (Alpine)** – Lightweight Node.js environment  
-- **Express** – Web server framework  
-- **Docker** – Containerization of application  
-- **GitHub Actions** – CI/CD workflow automation  
-- **Trivy** – Container image vulnerability scanning  
-- **npm** – Node.js dependency management  
-- **Vercel** – Deployment of static and dynamic apps  
+- **Node.js 18 (Alpine)** – Lightweight, secure Node.js environment
+- **Express** – Robust web server framework
+- **Docker** – Containerization of the application
+- **GitHub Actions** – CI/CD workflow automation
+- **Trivy** – Container image vulnerability scanning
+- **Vercel** – Deployment for the live production environment
 
 ---
 
 ## 📂 Project Structure
 
+```text
 deploylynx-naturalfit-devsecops/
 │
 ├── .github/
-│ └── workflows/
-│ └── devsecops.yml # GitHub Actions workflow
-├── app/ # Node.js app source code
-│ ├── package.json
-│ ├── package-lock.json
-│ ├── index.js
-│ ├── public/
-│ │ ├── index.html
-│ │ └── style.css
-│ └── screenshots/
-│ ├── local.png
-│ └── vercel.png
-├── Dockerfile # Container build instructions
-├── docker-compose.yml # Optional local multi-container setup
-├── README.md
-└── .gitignore
-
+│   └── workflows/
+│       └── devsecops.yml   # GitHub Actions workflow
+├── app/                    # Node.js app source code
+│   ├── public/             # Static frontend files
+│   │   ├── index.html
+│   │   └── style.css
+│   └── screenshots/        # Project documentation images
+│       ├── local.png
+│       └── vercel.png
+├── Dockerfile              # Container build instructions
+├── .gitignore              # Files excluded from version control
+└── README.md
 
 ---
 
-## ⚡ Setup Instructions
+⚡ Setup Instructions
+Clone Repository
 
-1. **Clone Repository**
-
-```bash
-git clone https://github.com/Deploylynx/deploylynx-naturalfit-devsecops.git
-cd deploylynx-naturalfit-devsecops/app
-
+Bash
+git clone [https://github.com/Deploylynx/deploylynx-naturalfit-devsecops.git](https://github.com/Deploylynx/deploylynx-naturalfit-devsecops.git)
+cd deploylynx-naturalfit-devsecops
 
 ---
-Install Dependencies
+Run Locally (with Node.js)
+Bash
+cd app
 npm install
-Run Locally
 node index.js
 
-Open your browser at: http://localhost:3000
-
 Build & Run with Docker
+Bash
 docker build -t naturalfit-app .
 docker run -p 3000:3000 naturalfit-app
 
-GitHub Actions CI/CD
-Every push to the main branch triggers:
-Docker image build
-Trivy security scan
-Workflow file: .github/workflows/devsecops.yml
-Optional: Docker Compose
-docker-compose up --build
 
----
-## 🖥️ Project Screenshots
+🖥️ Project Screenshots
+Local Development Environment
+<img src="app/screenshots/local.png" width="800" alt="Local Site">
 
-### Local Development Environment
-<img width="1579" height="947" alt="image" src="https://github.com/user-attachments/assets/f195267b-f63b-4113-865d-669bbb348630" />
-
-
-### Vercel Deployed Environment
+Vercel Deployed Environment
 <img src="app/screenshots/vercel.png" width="800" alt="Deployed Site">
 ---
 
 🔒 DevSecOps Implementation
+Security Middleware (Helmet)
+We use Helmet.js to secure Express apps by setting various HTTP headers.
 
-Express Security Middleware (Helmet):
-
+JavaScript
 const helmet = require('helmet');
 app.use(helmet());
 
-Security & Repo Management:
+---
 
-.env file ignored in .gitignore
-Unnecessary files ignored: node_modules, .DS_Store, Thumbs.db, *.log
-Trivy scans Docker images automatically in GitHub Actions workflow
+Repository Management & Scanning
+Clean Repo: Sensitive files like .env and bulky folders like node_modules are strictly ignored.
 
-Dockerfile Highlights:
+Vulnerability Scanning: Trivy scans every Docker build automatically within the GitHub Actions pipeline to catch security flaws before deployment.
 
 ---
 
-🔒 DevSecOps Implementation
+Dockerfile Highlights
+Base Image: Uses node:18-alpine for a reduced attack surface.
 
-Express Security Middleware (Helmet):
-
-const helmet = require('helmet');
-app.use(helmet());
-
-Security & Repo Management:
-
-.env file ignored in .gitignore
-Unnecessary files ignored: node_modules, .DS_Store, Thumbs.db, *.log
-Trivy scans Docker images automatically in GitHub Actions workflow
+Principle of Least Privilege: Copies only necessary package files before source code to optimize build caching.
 
 ---
 
-Dockerfile Highlights:
-Base image: node:18-alpine
-Copies package.json and installs dependencies
-Copies app source code
-Exposes port 3000
-
-GitHub Actions Workflow Highlights:
-
----
-
-- name: Build Docker Image
-  run: docker build -t naturalfit-app .
-
-- name: Scan Docker Image with Trivy
-  run: trivy image naturalfit-app
-
-  ---
-
-  👨‍💻 Author & Project Info
-
+👨‍💻 Author & Project Info
 Hina Atif – Project Developer
-This project was completed as a case study for DeployLynx.com, showcasing hands-on DevSecOps skills.
+This project was completed as a case study for DeployLynx.com, showcasing hands-on DevSecOps and cloud infrastructure skills.
 
-Live Deployed Site: https://deploylynx-naturalfit-devsecops.vercel.app
-
----
-
-**About:**  
-Production-ready DevSecOps pipeline for a herbal e-commerce application using Docker, GitHub Actions, and Trivy security scanning | DeployLynx Case Study
+Live Deployed Site: View on Vercel
 
 
 
