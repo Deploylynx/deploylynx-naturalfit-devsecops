@@ -77,7 +77,6 @@ Optional: Docker Compose
 docker-compose up --build
 
 ---
-
 ## 🖥️ Screenshots
 
 Local site:
