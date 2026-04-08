@@ -77,16 +77,16 @@ Optional: Docker Compose
 docker-compose up --build
 
 ---
+
 ## 🖥️ Screenshots
 
 Local site:
 
-![Local Site](screenshots/local.png)
+<img src="app/screenshots/local.png" alt="Local site" width="800" />
 
 Deployed site:
 
-![Deployed Site](screenshots/vercel.png)
-
+<img src="app/screenshots/vercel.png" alt="Deployed site" width="800" />
 ---
 
 🔒 DevSecOps Implementation
