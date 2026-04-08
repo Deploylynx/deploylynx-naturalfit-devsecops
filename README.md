@@ -77,18 +77,15 @@ Optional: Docker Compose
 docker-compose up --build
 
 ---
-
 ## 🖥️ Screenshots
 
 Local site:
 
-<img width="1798" height="949" alt="image" src="https://github.com/user-attachments/assets/e3abf230-3ae2-4c1d-8824-75b54c5b9efa" />
-
-
+![Local Site](screenshots/local.png)
 
 Deployed site:
 
-<img width="1685" height="954" alt="image" src="https://github.com/user-attachments/assets/7f37b3fa-5c81-43ca-b2fc-09bb13c7226e" />
+![Deployed Site](screenshots/vercel.png)
 
 ---
 
