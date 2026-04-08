@@ -15,7 +15,7 @@ Build and secure a Node.js application with a CI/CD pipeline, incorporating auto
 - **Docker** – Containerization of application  
 - **GitHub Actions** – CI/CD workflow automation  
 - **Trivy** – Container image vulnerability scanning  
-- **npm** – Node.js dependency management  
+- **npm** – Node.js dependency management
 
 ---
 
