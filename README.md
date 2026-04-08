@@ -80,7 +80,8 @@ docker-compose up --build
 ## 🖥️ Project Screenshots
 
 ### Local Development Environment
-<img src="app/screenshots/local.png" width="800" alt="Local Site">
+<img width="1579" height="947" alt="image" src="https://github.com/user-attachments/assets/f195267b-f63b-4113-865d-669bbb348630" />
+
 
 ### Vercel Deployed Environment
 <img src="app/screenshots/vercel.png" width="800" alt="Deployed Site">
