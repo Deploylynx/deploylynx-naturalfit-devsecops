@@ -82,12 +82,13 @@ docker-compose up --build
 
 Local site:
 
-<img width="1760" height="2015" alt="local" src="https://github.com/user-attachments/assets/9075b823-ca08-4727-aa80-ec3a6e61a70e" />
+<img width="1798" height="949" alt="image" src="https://github.com/user-attachments/assets/e3abf230-3ae2-4c1d-8824-75b54c5b9efa" />
+
 
 
 Deployed site:
 
-"C:\Work\naturalfit-devsecops-project\app\screenshots\vercel.png"
+<img width="1685" height="954" alt="image" src="https://github.com/user-attachments/assets/7f37b3fa-5c81-43ca-b2fc-09bb13c7226e" />
 
 ---
 
