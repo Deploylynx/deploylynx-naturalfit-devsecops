@@ -77,12 +77,12 @@ Optional: Docker Compose
 docker-compose up --build
 
 ---
-## 🖥️ Screenshots
+## 🖥️ Project Screenshots
 
-### Local Environment
+### Local Development Environment
 <img src="app/screenshots/local.png" width="800" alt="Local Site">
 
-### Deployed Environment
+### Vercel Deployed Environment
 <img src="app/screenshots/vercel.png" width="800" alt="Deployed Site">
 ---
 
