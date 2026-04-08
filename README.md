@@ -79,13 +79,11 @@ docker-compose up --build
 ---
 ## 🖥️ Screenshots
 
-Local site:
+### Local Environment
+<img src="app/screenshots/local.png" width="800" alt="Local Site">
 
-<img width="1760" height="2015" alt="local" src="https://github.com/user-attachments/assets/46fb9cc7-ac76-4f89-a0a5-10ed51e8d32b" />
-
-Deployed site:
-
-<img src="app/screenshots/vercel.png" alt="Deployed site" width="800" />
+### Deployed Environment
+<img src="app/screenshots/vercel.png" width="800" alt="Deployed Site">
 ---
 
 🔒 DevSecOps Implementation
