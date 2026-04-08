@@ -26,16 +26,16 @@
     }
 
     .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      width: 240px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: 0.3s;
-      border-top: 4px solid #4CAF50;
-    }
-
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 240px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  border-top: 4px solid #4CAF50;
+  overflow: hidden;
+}
     .card:hover {
       transform: translateY(-10px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.2);
@@ -44,20 +44,23 @@
     .card h2 { color: #2e7d32; font-size: 1.4em; margin-bottom: 10px; }
     .card p { font-size: 0.95em; color: #666; min-height: 40px; }
 
-    button {
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      cursor: pointer;
-      margin-top: 15px;
-      border-radius: 25px;
-      font-weight: bold;
-      width: 100%;
-      transition: background 0.3s;
-    }
+   button {
+  background: linear-gradient(45deg, #4CAF50, #2e7d32);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  margin-top: 15px;
+  border-radius: 25px;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.3s ease;
+}
 
-    button:hover { background: #1b5e20; }
+button:hover {
+  background: linear-gradient(45deg, #1b5e20, #4CAF50);
+  transform: scale(1.05);
+}
 
     /* VIDEO SECTION */
     .video-section {
@@ -135,8 +138,17 @@
 
 <header>
   <h1>🌿 Natural Fit Herbal Shop</h1>
-  <p>Pure. Organic. Healthy Living</p>
+  <p>Premium Herbal Wellness & Organic Lifestyle</p>
 </header>
+
+<section style="text-align:center; padding:50px; background:#e8f5e9;">
+  <h1 style="font-size:36px; color:#2e7d32;">
+    Transform Your Health Naturally 💪
+  </h1>
+  <p style="font-size:18px; color:#555;">
+    Discover powerful herbal solutions for hair care, weight loss, and complete wellness.
+  </p>
+</section>
 
 <h2 class="section-title">Our Premium Products</h2>
 <section class="products">
