@@ -59,13 +59,12 @@ Bash
 docker build -t naturalfit-app .
 docker run -p 3000:3000 naturalfit-app
 
-
+---
 🖥️ Project Screenshots
-### Local Development Environment
 ![Local Site](./app/screenshots/local.png)
-
-### Vercel Deployed Environment
 ![Deployed Site](./app/screenshots/vercel.png)
+
+---
 
 🔒 DevSecOps Implementation
 Security Middleware (Helmet)
