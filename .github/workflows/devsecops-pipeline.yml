@@ -1,16 +1,31 @@
-# 2. SAST (Static Application Security Testing)
+name: Natural-Fit-Premium-DevSecOps
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Secret Scan (Gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Snyk Code Scan
         uses: snyk/actions/node@master
         with:
-          args: app --severity-threshold=high
+          args: app
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
-      # 3. Dependency Scanning (SCA)
       - name: Snyk Open Source Scan
         uses: snyk/actions/node@master
         with:
-          command: monitor
           args: app
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
