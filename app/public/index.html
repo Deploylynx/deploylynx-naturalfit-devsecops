@@ -1,255 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Natural Fit Herbal Shop</title>
-  
-  <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous"
-    src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0">
-  </script>
-
-  <style>
-    /* GLOBAL STYLES */
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f9fdf9; color: #333; }
-    header { background: #2e7d32; color: white; text-align: center; padding: 40px; }
-    .section-title { text-align: center; margin-top: 40px; color: #2e7d32; font-size: 28px; }
-
-    /* PRODUCTS SECTION */
-    .products {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 40px;
-      flex-wrap: wrap;
-    }
-
-    .card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  width: 240px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: 0.3s;
-  border-top: 4px solid #4CAF50;
-  overflow: hidden;
-}
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-
-    .card h2 { color: #2e7d32; font-size: 1.4em; margin-bottom: 10px; }
-    .card p { font-size: 0.95em; color: #666; min-height: 40px; }
-
-   button {
-  background: linear-gradient(45deg, #4CAF50, #2e7d32);
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  cursor: pointer;
-  margin-top: 15px;
-  border-radius: 25px;
-  font-weight: bold;
-  width: 100%;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background: linear-gradient(45deg, #1b5e20, #4CAF50);
-  transform: scale(1.05);
-}
-
-    /* VIDEO SECTION */
-    .video-section {
-      text-align: center;
-      padding: 60px 20px;
-      background: #f1f8e9;
-    }
-
-    .video-container {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .video-shape {
-      background: white;
-      padding: 15px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    /* REVIEWS SECTION (UPGRADED WITH HOVER) */
-    .reviews-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      padding: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .testimonial-card {
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      border-left: 6px solid #4CAF50;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-      cursor: default;
-    }
-
-    /* Hover effect for reviews */
-    .testimonial-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-      border-left-color: #1b5e20;
-    }
-
-    .stars { color: #ffb400; margin-bottom: 10px; font-size: 1.2em; }
-    .testimonial-card p { font-style: italic; line-height: 1.6; color: #444; }
-    .client-name { 
-      display: block; 
-      margin-top: 15px; 
-      font-weight: bold; 
-      color: #2e7d32; 
-      font-size: 0.9em; 
-      text-transform: uppercase; 
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #2e7d32;
-      color: white;
-      margin-top: 40px;
-    }
-
-    footer a { color: #a5d6a7; text-decoration: none; font-weight: bold; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Fit | Premium Organic Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; background: #fdfdfd; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; }
+        button:hover { background: #1b5e20 !important; }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <h1>🌿 Natural Fit Herbal Shop</h1>
-  <p>Premium Herbal Wellness & Organic Lifestyle</p>
-</header>
+<main style="font-family: 'Inter', sans-serif; background: #fdfdfd;">
+    <section class="hero" style="padding: 80px 20px; text-align: center; background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);">
+        <h1 style="color: #2e7d32; font-size: 3rem; font-weight: 700; margin-bottom: 15px;">Pure. Organic. Natural Fit.</h1>
+        <p style="color: #666; max-width: 600px; margin: 0 auto 30px auto; font-size: 1.1rem; line-height: 1.6;">
+            Premium organic products for a sustainable lifestyle, secured with automated DevSecOps excellence.
+        </p>
+    </section>
 
-<section style="text-align:center; padding:50px; background:#e8f5e9;">
-  <h1 style="font-size:36px; color:#2e7d32;">
-    Transform Your Health Naturally 💪
-  </h1>
-  <p style="font-size:18px; color:#555;">
-    Discover powerful herbal solutions for hair care, weight loss, and complete wellness.
-  </p>
-</section>
+    <div class="product-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; padding: 60px 20px; max-width: 1200px; margin: auto;">
+        
+        <div class="card" style="border: 1px solid #eee; border-radius: 20px; overflow: hidden; transition: 0.4s; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <img src="/images/product1.png" alt="Organic Serum" style="width:100%; height:280px; object-fit:cover;">
+            <div style="padding: 25px;">
+                <h3 style="margin:0; color:#333; font-size: 1.4rem;">Organic Serum</h3>
+                <p style="color:#2e7d32; font-weight:bold; margin: 15px 0; font-size: 1.2rem;">$29.00</p>
+                <button style="width:100%; background:#2e7d32; color:white; border:none; padding:14px; border-radius:10px; cursor:pointer; font-weight:600; transition: 0.3s;">Add to Cart</button>
+            </div>
+        </div>
 
-<h2 class="section-title">Our Premium Products</h2>
-<section class="products">
+        <div class="card" style="border: 1px solid #eee; border-radius: 20px; overflow: hidden; transition: 0.4s; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <img src="/images/product2.png" alt="Herbal Tea Blend" style="width:100%; height:280px; object-fit:cover;">
+            <div style="padding: 25px;">
+                <h3 style="margin:0; color:#333; font-size: 1.4rem;">Herbal Tea Blend</h3>
+                <p style="color:#2e7d32; font-weight:bold; margin: 15px 0; font-size: 1.2rem;">$15.00</p>
+                <button style="width:100%; background:#2e7d32; color:white; border:none; padding:14px; border-radius:10px; cursor:pointer; font-weight:600; transition: 0.3s;">Add to Cart</button>
+            </div>
+        </div>
 
-  <div class="card">
-    <h2>Herbal Tea</h2>
-    <p>Boost immunity and relax naturally with our organic blend.</p>
-    <a href="https://www.facebook.com/photo?fbid=122124768332788467" target="_blank">
-      <button>Buy Now</button>
-    </a>
-  </div>
-
-  <div class="card">
-    <h2>Hair Oil</h2>
-    <p>Get long, shiny, and black hair naturally 🌟</p>
-    <a href="https://www.facebook.com/photo/?fbid=122124733694788467" target="_blank">
-      <button>Buy Now</button>
-    </a>
-  </div>
-
-  <div class="card">
-    <h2>Anti Cellulite Oil</h2>
-    <p>Reduce fat and smooth your skin naturally 💚</p>
-    <a href="https://www.facebook.com/photo?fbid=122124699320788467" target="_blank">
-      <button>Buy Now</button>
-    </a>
-  </div>
-
-  <div class="card">
-    <h2>Grey Hair Mask</h2>
-    <p>A natural way to reverse grey hair and restore shine 🖤</p>
-    <a href="https://www.facebook.com/photo?fbid=122125882448788467" target="_blank">
-      <button>Buy Now</button>
-    </a>
-  </div>
-
-  <div class="card">
-    <h2>Muscle Comfort</h2>
-    <p>Relief for cramps and stiffness with herbal power.</p>
-    <a href="https://www.facebook.com/photo?fbid=122123132150788467" target="_blank">
-      <button>Buy Now</button>
-    </a>
-  </div>
-
-</section>
-
-<section class="video-section">
-  <h2 class="section-title">Natural Fit in Action</h2>
-  <div class="video-container">
-
-    <div class="video-shape">
-      <div class="fb-video"
-        data-href="https://www.facebook.com/61573654027037/videos/1327606751872572/"
-        data-width="300"
-        data-show-text="false">
-      </div>
-      <p>Hair Mask Application</p>
     </div>
+</main>
 
-    <div class="video-shape">
-      <div class="fb-video"
-        data-href="https://www.facebook.com/61573654027037/videos/563449629828805/"
-        data-width="300"
-        data-show-text="false">
-      </div>
-      <p>Weight Loss Oil Guide</p>
-    </div>
-
-  </div>
-</section>
-
-<h2 class="section-title">What Our Happy Clients Say</h2>
-<section class="reviews-container">
-
-  <div class="testimonial-card">
-    <div class="stars">⭐⭐⭐⭐⭐</div>
-    <p>"I've used the weight loss combo. It worked magically! I reduced my weight in a very safe and natural way."</p>
-    <span class="client-name">Verified Customer</span>
-  </div>
-
-  <div class="testimonial-card">
-    <div class="stars">⭐⭐⭐⭐⭐</div>
-    <p>"My mom's hair became black again and it's also growing longer within weeks of using the Age Reverse Oil!"</p>
-    <span class="client-name">Happy Daughter</span>
-  </div>
-
-  <div class="testimonial-card">
-    <div class="stars">⭐⭐⭐⭐⭐</div>
-    <p>"Suffering from muscle cramps was a nightmare. This relief oil worked like a miracle. 100% natural!"</p>
-    <span class="client-name">Regular User</span>
-  </div>
-
-</section>
-
-<footer>
-  <p>📞 Contact:
-    <a href="https://wa.me/923323561134" target="_blank">
-      WhatsApp: +92 332 3561134
-    </a>
-  </p>
-  <p>📘 <a href="https://www.facebook.com/profile.php?id=61573654027037" target="_blank">Visit our Facebook Page</a></p>
+<footer style="text-align: center; padding: 40px; color: #999; font-size: 0.9rem; border-top: 1px solid #eee;">
+    &copy; 2026 Natural Fit. All rights reserved.
 </footer>
 
 </body>
