@@ -61,12 +61,11 @@ docker run -p 3000:3000 naturalfit-app
 
 
 🖥️ Project Screenshots
-Local Development Environment
-<img src="app/screenshots/local.png" width="800" alt="Local Site">
+### Local Development Environment
+![Local Site](./app/screenshots/local.png)
 
-Vercel Deployed Environment
-<img src="app/screenshots/vercel.png" width="800" alt="Deployed Site">
----
+### Vercel Deployed Environment
+![Deployed Site](./app/screenshots/vercel.png)
 
 🔒 DevSecOps Implementation
 Security Middleware (Helmet)
