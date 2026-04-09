@@ -64,6 +64,7 @@ docker run -p 3000:3000 naturalfit-app
 ![Local Site](./app/screenshots/local.png)
 ![Deployed Site](./app/screenshots/vercel.png)
 
+app/screenshots/local.png
 ---
 
 🔒 DevSecOps Implementation
