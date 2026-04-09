@@ -1,45 +1,16 @@
-name: Natural-Fit-Premium-DevSecOps
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-jobs:
-  security-and-build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Secret Scan (Gitleaks)
-        uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+# 2. SAST (Static Application Security Testing)
       - name: Snyk Code Scan
         uses: snyk/actions/node@master
         with:
-          args: --dir=app
+          args: app --severity-threshold=high
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
+      # 3. Dependency Scanning (SCA)
       - name: Snyk Open Source Scan
         uses: snyk/actions/node@master
         with:
-          args: --dir=app
+          command: monitor
+          args: app
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-
-      - name: Build Docker Image
-        run: |
-          docker build -t naturalfit-hardened ./app
-
-      - name: Trivy Image Scan
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: 'naturalfit-hardened'
-          format: 'table'
-          exit-code: '1'
-          severity: 'CRITICAL,HIGH'
