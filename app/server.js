@@ -3,10 +3,10 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-// 1. Tell Express to serve images/CSS from the 'public' folder
+// 1. Correctly point to the 'public' folder for CSS/Images
 app.use(express.static(path.join(__dirname, 'public')));
 
-// 2. Tell the server to find index.html INSIDE the 'public' folder
+// 2. Explicitly serve the index.html from the 'public' folder
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
