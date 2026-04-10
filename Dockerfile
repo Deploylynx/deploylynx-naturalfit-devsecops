@@ -1,14 +1,16 @@
 FROM node:20-slim
 
-WORKDIR /app
+# Create the working directory inside the container
+WORKDIR /usr/src/app
 
-# 1. Look inside the 'app' folder for package files
+# 1. Copy package files to install dependencies
+# We look into the 'app' folder on your computer
 COPY app/package*.json ./
 
-# 2. Install the necessary dependencies
 RUN npm install
 
-# 3. Copy everything else from the 'app' folder
+# 2. Copy everything from your 'app' folder into the container
+# This includes the 'public' folder and 'server.js'
 COPY app/ .
 
 EXPOSE 3000
