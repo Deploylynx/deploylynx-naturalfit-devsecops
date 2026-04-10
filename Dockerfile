@@ -2,13 +2,13 @@ FROM node:20-slim
 
 WORKDIR /app
 
-# Copy dependency files from the app folder
+# 1. Look inside the 'app' folder for package files
 COPY app/package*.json ./
 
-# Install dependencies
+# 2. Install the necessary dependencies
 RUN npm install
 
-# Copy the rest of the application code from the app folder
+# 3. Copy everything else from the 'app' folder
 COPY app/ .
 
 EXPOSE 3000
