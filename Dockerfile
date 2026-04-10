@@ -1,4 +1,4 @@
-FROM node:20-slim
+FROM node:20-alpine
 WORKDIR /app
 # Copy from your local 'app' folder to the container's current dir
 COPY app/package*.json ./
