@@ -7,153 +7,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { 
-            margin: 0; 
-            font-family: 'Inter', sans-serif; 
-            background: #fdfdfd; 
-            color: #333; 
-        }
-        .hero { 
-            padding: 60px 20px; 
-            text-align: center; 
-            background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%); 
-        }
+        body { margin: 0; font-family: 'Inter', sans-serif; background: #fdfdfd; color: #333; }
+        .hero { padding: 60px 20px; text-align: center; background: #e8f5e9; }
         
         .product-container { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 30px; 
-            padding: 40px; 
-            max-width: 1200px; 
-            margin: auto; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 25px; padding: 40px; max-width: 1100px; margin: auto; 
         }
 
-        /* Premium Card Styling */
         .card { 
-            background: #ffffff; 
-            border: 1px solid #eee; 
-            border-radius: 16px; 
-            overflow: hidden; 
-            transition: 0.3s; 
-            display: flex; 
-            flex-direction: column;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        .card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: 0 12px 24px rgba(0,0,0,0.1); 
+            background: #fff; border: 1px solid #eee; border-radius: 12px; 
+            overflow: hidden; display: flex; flex-direction: column;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
+        /* STRICT IMAGE SIZING - THIS FIXES THE LAYOUT */
         .image-box {
-            height: 320px; 
-            background: #f8f9fa; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            padding: 25px;
-            border-bottom: 1px solid #eee;
+            height: 250px; /* Limits the height so it can't break the layout */
+            background: #f9f9f9; display: flex; align-items: center; 
+            justify-content: center; padding: 15px; overflow: hidden;
         }
         .product-img { 
-            max-width: 100%; 
-            max-height: 100%; 
-            object-id: contain; 
-            pointer-events: none; /* This makes the image unclickable so it doesn't block the button */
+            max-width: 100%; max-height: 100%; object-fit: contain; 
+            pointer-events: none; /* Makes the image unclickable so buttons work */
         }
 
-        .content-box { 
-            padding: 25px; 
-            text-align: left; 
-            background: #1a1c23; 
-            color: white; 
-            flex-grow: 1; 
-        }
-        h3 { 
-            margin: 0 0 20px 0; 
-            font-size: 1.2rem; 
-            font-weight: 600; 
-            color: #fff; 
-        }
+        .content-box { padding: 20px; background: #1a1c23; color: white; flex-grow: 1; }
+        h3 { margin: 0 0 15px 0; font-size: 1.1rem; }
 
-        .btn-group { 
-            display: flex; 
-            gap: 10px; 
-        }
+        .btn-group { display: flex; gap: 10px; }
         .buy-btn { 
-            flex: 2; 
-            background: #a259ff; 
-            color: white; 
-            border: none; 
-            padding: 12px; 
-            border-radius: 8px; 
-            cursor: pointer; 
-            font-weight: 600; 
-            transition: 0.2s; 
-            text-align: center; 
-            text-decoration: none;
+            flex: 2; background: #a259ff; color: white; border: none; 
+            padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600; 
         }
-        .buy-btn:hover { 
-            background: #8e44ad; 
-        }
-        
         .wa-btn {
-            flex: 1; 
-            background: #25d366; 
-            color: white; 
-            border: none;
-            padding: 12px; 
-            border-radius: 8px; 
-            cursor: pointer; 
-            font-size: 1.2rem;
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            text-decoration: none; 
-            transition: 0.2s;
-        }
-        .wa-btn:hover { 
-            background: #128c7e; 
+            flex: 1; background: #25d366; color: white; border: none;
+            border-radius: 6px; display: flex; align-items: center; 
+            justify-content: center; text-decoration: none; font-size: 1.2rem;
         }
 
-        /* Social Footer */
-        .social-footer { 
-            text-align: center; 
-            padding: 50px 20px; 
-            background: #f8f9fa; 
-            border-top: 1px solid #eee; 
-        }
-        .social-footer h2 { 
-            color: #2e7d32; 
-            margin-bottom: 25px; 
-        }
-        .social-icon { 
-            font-size: 2.5rem; 
-            margin: 0 20px; 
-            transition: 0.3s; 
-            display: inline-block;
-            text-decoration: none;
-        }
+        .social-footer { text-align: center; padding: 40px; background: #f8f9fa; border-top: 1px solid #eee; }
+        .social-icon { font-size: 2rem; margin: 0 15px; text-decoration: none; display: inline-block; }
         .fa-whatsapp { color: #25d366; }
         .fa-facebook { color: #1877f2; }
-        .social-icon:hover { transform: scale(1.15); }
-        .footer-text { margin-top: 30px; color: #888; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <h1 style="color: #2e7d32; font-size: 2.8rem; font-weight: 700; margin-bottom: 15px;">Pure. Organic. Natural Fit.</h1>
-        <p style="color: #666; font-size: 1.2rem; max-width: 700px; margin: auto;">Premium health products, delivered through automated DevSecOps excellence.</p>
+        <h1 style="color: #2e7d32; font-size: 2.2rem;">Pure. Organic. Natural Fit.</h1>
+        <p>Premium quality secured with DevSecOps excellence.</p>
     </section>
 
     <div class="product-container">
         <div class="card">
             <div class="image-box">
-                <img src="local.png" alt="Organic Serum" class="product-img">
+                <img src="local.png" alt="Product" class="product-img">
             </div>
             <div class="content-box">
                 <h3>Organic Serum</h3>
                 <div class="btn-group">
-                    <button class="buy-btn" onclick="alert('Added to cart!')">Add to Cart</button>
+                    <button class="buy-btn" onclick="alert('Added!')">Add to Cart</button>
                     <a href="https://wa.me/923323561134" class="wa-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
@@ -161,12 +76,12 @@
 
         <div class="card">
             <div class="image-box">
-                <img src="vercel.png" alt="Herbal Tea Blend" class="product-img">
+                <img src="vercel.png" alt="Product" class="product-img">
             </div>
             <div class="content-box">
                 <h3>Herbal Tea Blend</h3>
                 <div class="btn-group">
-                    <button class="buy-btn" onclick="alert('Added to cart!')">Add to Cart</button>
+                    <button class="buy-btn" onclick="alert('Added!')">Add to Cart</button>
                     <a href="https://wa.me/923323561134" class="wa-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
@@ -174,16 +89,8 @@
     </div>
 
     <div class="social-footer">
-        <h2>Connect With Natural Fit</h2>
-        <div style="margin-top: 10px;">
-            <a href="https://wa.me/923323561134" class="social-icon" target="_blank" title="WhatsApp Us">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=61573654027037" class="social-icon" target="_blank" title="Follow us on Facebook">
-                <i class="fab fa-facebook"></i>
-            </a>
-        </div>
-        <p class="footer-text">&copy; 2026 Natural Fit Shop. All products are 100% Organic.</p>
+        <a href="https://wa.me/923323561134" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61573654027037" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
 
 </body>
