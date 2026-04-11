@@ -1,8 +1,8 @@
 FROM node:20-alpine
 WORKDIR /app
-# Copy from your local 'app' folder to the container's current dir
 COPY app/package*.json ./
 RUN npm install
-COPY app/ .
+# This line is key! It copies your public folder and server.js into /app
+COPY app/ . 
 EXPOSE 3000
 CMD ["node", "server.js"]
