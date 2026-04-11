@@ -30,9 +30,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and Push Docker Image
+     - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: ./app
+          context: .              # Ensure this is a DOT
+          file: ./Dockerfile      # Ensure this points to root
           push: true
-          tags: ${{ secrets.DOCKERHUB_USER }}/natural-fit-shop:latest
+          tags: deploylynx/natural-fit-shop:latest
