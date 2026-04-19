@@ -1,97 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natural Fit | Premium Organic Shop</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body { margin: 0; font-family: 'Inter', sans-serif; background: #fdfdfd; color: #333; }
-        .hero { padding: 60px 20px; text-align: center; background: #e8f5e9; }
-        
-        .product-container { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 25px; padding: 40px; max-width: 1100px; margin: auto; 
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natural Fit</title>
 
-        .card { 
-            background: #fff; border: 1px solid #eee; border-radius: 12px; 
-            overflow: hidden; display: flex; flex-direction: column;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-        /* STRICT IMAGE SIZING - THIS FIXES THE LAYOUT */
-        .image-box {
-            height: 250px; /* Limits the height so it can't break the layout */
-            background: #f9f9f9; display: flex; align-items: center; 
-            justify-content: center; padding: 15px; overflow: hidden;
-        }
-        .product-img { 
-            max-width: 100%; max-height: 100%; object-fit: contain; 
-            pointer-events: none; /* Makes the image unclickable so buttons work */
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0f172a;
+    color: white;
+}
 
-        .content-box { padding: 20px; background: #1a1c23; color: white; flex-grow: 1; }
-        h3 { margin: 0 0 15px 0; font-size: 1.1rem; }
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
 
-        .btn-group { display: flex; gap: 10px; }
-        .buy-btn { 
-            flex: 2; background: #a259ff; color: white; border: none; 
-            padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600; 
-        }
-        .wa-btn {
-            flex: 1; background: #25d366; color: white; border: none;
-            border-radius: 6px; display: flex; align-items: center; 
-            justify-content: center; text-decoration: none; font-size: 1.2rem;
-        }
+.hero h1 {
+    color: #22c55e;
+}
 
-        .social-footer { text-align: center; padding: 40px; background: #f8f9fa; border-top: 1px solid #eee; }
-        .social-icon { font-size: 2rem; margin: 0 15px; text-decoration: none; display: inline-block; }
-        .fa-whatsapp { color: #25d366; }
-        .fa-facebook { color: #1877f2; }
-    </style>
+/* GRID LAYOUT */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 30px;
+}
+
+/* CARD DESIGN */
+.card {
+    background: #1e293b;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* IMAGE BOX (FIXED SIZE) */
+.image-box {
+    height: 220px;
+    background: #0f172a;
+}
+
+/* CONTENT */
+.content-box {
+    padding: 20px;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+/* BUTTONS */
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.buy-btn {
+    flex: 2;
+    padding: 10px;
+    background: #9333ea;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+.view-btn {
+    flex: 1;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    color: white;
+}
+</style>
 </head>
+
 <body>
 
-    <section class="hero">
-        <h1 style="color: #2e7d32; font-size: 2.2rem;">Pure. Organic. Natural Fit.</h1>
-        <p>Premium quality secured with DevSecOps excellence.</p>
-    </section>
+<section class="hero">
+    <h1>Natural Fit</h1>
+    <p>Premium Organic Products</p>
+</section>
 
-    <div class="product-container">
-        <div class="card">
-            <div class="image-box">
-                <img src="local.png" alt="Product" class="product-img">
-            </div>
-            <div class="content-box">
-                <h3>Organic Serum</h3>
-                <div class="btn-group">
-                    <button class="buy-btn" onclick="alert('Added!')">Add to Cart</button>
-                    <a href="https://wa.me/923323561134" class="wa-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
+<div class="product-container">
 
-        <div class="card">
-            <div class="image-box">
-                <img src="vercel.png" alt="Product" class="product-img">
-            </div>
-            <div class="content-box">
-                <h3>Herbal Tea Blend</h3>
-                <div class="btn-group">
-                    <button class="buy-btn" onclick="alert('Added!')">Add to Cart</button>
-                    <a href="https://wa.me/923323561134" class="wa-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                </div>
+    <div class="card">
+        <div class="image-box"></div>
+        <div class="content-box">
+            <h3>Product 1</h3>
+            <div class="btn-group">
+                <button class="buy-btn">Add to Cart</button>
+                <button class="view-btn">View</button>
             </div>
         </div>
     </div>
 
-    <div class="social-footer">
-        <a href="https://wa.me/923323561134" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61573654027037" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
+    <div class="card">
+        <div class="image-box"></div>
+        <div class="content-box">
+            <h3>Product 2</h3>
+            <div class="btn-group">
+                <button class="buy-btn">Add to Cart</button>
+                <button class="view-btn">View</button>
+            </div>
+        </div>
     </div>
+
+    <div class="card">
+        <div class="image-box"></div>
+        <div class="content-box">
+            <h3>Product 3</h3>
+            <div class="btn-group">
+                <button class="buy-btn">Add to Cart</button>
+                <button class="view-btn">View</button>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
