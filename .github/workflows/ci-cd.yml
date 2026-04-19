@@ -31,9 +31,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build Docker image
-        run: docker build -t deploylynx/naturalfit-devsecops:latest .
-
+      - name: Build Docker image (with cache)
+  run: docker build --cache-from=deploylynx/naturalfit-devsecops:latest -t deploylynx/naturalfit-devsecops:latest .
+  
       - name: Scan Docker image
         run: trivy image deploylynx/naturalfit-devsecops:latest
 
