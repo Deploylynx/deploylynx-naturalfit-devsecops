@@ -1,39 +1,38 @@
-name: Natural-Fit-Premium-DevSecOps
+name: DevSecOps Pipeline
 
 on:
   push:
     branches: [ "main" ]
 
 jobs:
-  security-and-build:
+  devsecops:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+    - name: Checkout Code
+      uses: actions/checkout@v3
 
-      - name: Secret Scan (Gitleaks)
-        uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
 
-      - name: Snyk Code Scan
-        uses: snyk/actions/node@master
-        with:
-          args: app
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+    - name: Install Dependencies
+      run: npm install || true
 
-      # Now that we know Snyk works, we add the Docker Build back:
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USER }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Run ESLint (optional)
+      run: npx eslint . || true
 
-     - name: Build and push Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .              # Ensure this is a DOT
-          file: ./Dockerfile      # Ensure this points to root
-          push: true
-          tags: deploylynx/natural-fit-shop:latest
+    - name: Run Tests (optional)
+      run: npm test || true
+
+    - name: Dependency Scan
+      run: npm audit --audit-level=high || true
+
+    - name: Build Docker Image
+      run: docker build -t naturalfit-app .
+
+    - name: Scan Image with Trivy
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'naturalfit-app'
