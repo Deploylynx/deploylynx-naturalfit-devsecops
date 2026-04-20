@@ -2,9 +2,12 @@ FROM node:20
 
 WORKDIR /app
 
-COPY package*.json ./
+# Copy only dependency files first (better caching)
+COPY package.json package-lock.json ./
+
 RUN npm install
 
+# Copy rest of application
 COPY . .
 
 EXPOSE 3000
