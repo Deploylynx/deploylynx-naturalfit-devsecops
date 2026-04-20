@@ -21,13 +21,11 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t deploylynx/naturalfit-devsecops:latest ./app
-    
+
       - name: Run Trivy scan
-  uses: aquasecurity/trivy-action@master
-  with:
-    image-ref: deploylynx/naturalfit-devsecops:latest
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: deploylynx/naturalfit-devsecops:latest
 
       - name: Push Docker image
         run: docker push deploylynx/naturalfit-devsecops:latest
-
-    
