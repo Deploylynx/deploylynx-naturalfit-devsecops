@@ -1,2 +1,6 @@
-- name: Build Docker Image
-  run: docker build -t naturalfit-app -f Dockerfile .
+services:
+  app:
+    build: ./app
+    container_name: naturalfit-app
+    ports:
+      - "3000:3000"
