@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t deploylynx/naturalfit-devsecops:latest .
+       run: docker build -t deploylynx/naturalfit-devsecops:latest ./app
 
       - name: Push Docker image
         run: docker push deploylynx/naturalfit-devsecops:latest
