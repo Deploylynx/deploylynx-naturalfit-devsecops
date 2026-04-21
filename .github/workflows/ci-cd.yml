@@ -16,7 +16,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build Docker Image
-        run: docker build -t app-image:latest .
+        run: docker build -t app-image:latest -f app/Dockerfile app
 
       - name: List Docker images (debug)
         run: docker images
