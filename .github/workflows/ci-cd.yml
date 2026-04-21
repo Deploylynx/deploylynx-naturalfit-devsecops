@@ -12,6 +12,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install Node dependencies
+        run: |
+          cd app
+          npm install
+
+      - name: Run NPM Security Audit
+        run: |
+          cd app
+          npm audit --audit-level=high 
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
