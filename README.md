@@ -1,4 +1,4 @@
-# DevSecOps Pipeline - Natural Fit
+# Production-Ready DevSecOps Pipeline (AWS | Kubernetes | CI/CD | Security Automation)
 
 A DevSecOps CI/CD pipeline project developed by **Hina Atif** for **DeployLynx.com** as part of a professional project-based assignment. This project demonstrates a full DevSecOps workflow using **Node.js**, **Express**, **Docker**, **GitHub Actions**, and **Trivy security scanning**.
 
