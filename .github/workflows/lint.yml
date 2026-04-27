@@ -29,11 +29,11 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build Docker image
-        run: docker build -t naturalfit-app ./app
+  run: docker build -t naturalfit-app:latest ./app
 
-      - name: Run Trivy Scan
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: naturalfit-app
-          format: table
-          exit-code: "0"
+- name: Run Trivy Scan
+  uses: aquasecurity/trivy-action@master
+  with:
+    image-ref: naturalfit-app:latest
+    format: table
+    exit-code: "0"
