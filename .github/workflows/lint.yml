@@ -1,4 +1,4 @@
-name: ESLint CI
+name: DevSecOps CI Pipeline
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
@@ -21,3 +21,19 @@ jobs:
 
       - name: Run ESLint
         run: npx eslint .
+
+  docker-security:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t naturalfit-app .
+
+      - name: Run Trivy Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: naturalfit-app
+          format: table
+          exit-code: 0
