@@ -1,0 +1,25 @@
+{
+  "name": "naturalfit-devsecops-project",
+  "version": "1.0.0",
+  "description": "A DevSecOps CI/CD pipeline project developed by **Hina Atif** for **DeployLynx.com** as part of a professional project-based assignment. This project demonstrates a full DevSecOps workflow using **Node.js**, **Express**, **Docker**, **GitHub Actions**, and **Trivy security scanning**.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deploylynx/deploylynx-naturalfit-devsecops.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deploylynx/deploylynx-naturalfit-devsecops/issues"
+  },
+  "homepage": "https://github.com/Deploylynx/deploylynx-naturalfit-devsecops#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.2.1",
+    "globals": "^17.5.0"
+  }
+}
