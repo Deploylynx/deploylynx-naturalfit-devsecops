@@ -1,15 +1,39 @@
-docker-security:
-  runs-on: ubuntu-latest
+name: DevSecOps CI Pipeline
 
-  steps:
-    - uses: actions/checkout@v4
+on:
+  push:
+  pull_request:
 
-    - name: Build Docker image
-      run: docker build -t naturalfit-app ./app
+jobs:
+  lint:
+    runs-on: ubuntu-latest
 
-    - name: Run Trivy Scan
-      uses: aquasecurity/trivy-action@master
-      with:
-        image-ref: naturalfit-app
-        format: table
-        exit-code: 0
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run ESLint
+        run: npx eslint .
+
+  docker-security:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t naturalfit-app ./app
+
+      - name: Run Trivy Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: naturalfit-app
+          format: table
+          exit-code: 0
