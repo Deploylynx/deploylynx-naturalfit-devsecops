@@ -36,4 +36,4 @@ jobs:
         with:
           image-ref: naturalfit-app
           format: table
-          exit-code: 0
+          exit-code: "0"
