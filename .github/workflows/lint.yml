@@ -22,18 +22,18 @@ jobs:
       - name: Run ESLint
         run: npx eslint .
 
-docker-security:
-  runs-on: ubuntu-latest
+  docker-security:
+    runs-on: ubuntu-latest
 
-  steps:
-    - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-    - name: Build Docker image
-      run: docker build -t naturalfit-app:latest ./app
+      - name: Build Docker image
+        run: docker build -t naturalfit-app:latest ./app
 
-    - name: Run Trivy Scan
-      uses: aquasecurity/trivy-action@master
-      with:
-        image-ref: naturalfit-app:latest
-        format: table
-        exit-code: "0"
+      - name: Run Trivy Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: naturalfit-app:latest
+          format: table
+          exit-code: "0"
