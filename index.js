@@ -1,54 +1,21 @@
-name: DevSecOps CI/CD Pipeline
+const express = require("express");
+const app = express();
 
-on:
-  push:
-    branches:
-      - main
+const PORT = process.env.PORT || 3000;
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+// Home route
+app.get("/", (req, res) => {
+  res.send(
+    "Welcome to NaturalFit Herbal Products 🌿 — Delivering pure, natural, and effective wellness solutions for a healthier lifestyle. Trusted quality inspired by nature."
+  );
+});
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+// Health check route (useful for DevOps)
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm test || true
-
-      - name: Log in to DockerHub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USER }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Build Docker image
-        run: docker build -t deploylynx/naturalfit-devsecops:latest .
-
-      - name: Push Docker image
-        run: docker push deploylynx/naturalfit-devsecops:latest
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Deploy to EC2 via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_KEY }}
-          script: |
-            docker stop naturalfit || true
-            docker rm naturalfit || true
-            docker pull deploylynx/naturalfit-devsecops:latest
-            docker run -d -p 3000:3000 --name naturalfit deploylynx/naturalfit-devsecops:latest
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});

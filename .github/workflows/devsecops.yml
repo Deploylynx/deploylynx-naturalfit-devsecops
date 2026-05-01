@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
@@ -24,31 +24,31 @@ jobs:
       - name: Run tests
         run: npm test || true
 
-      - name: Log in to DockerHub
-        uses: docker/login-action@v2
+      - name: Login DockerHub
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build Docker image
+      - name: Build image
         run: docker build -t deploylynx/naturalfit-devsecops:latest .
 
-      - name: Push Docker image
+      - name: Push image
         run: docker push deploylynx/naturalfit-devsecops:latest
 
   deploy:
-    needs: build
     runs-on: ubuntu-latest
+    needs: build
 
     steps:
-     - name: Deploy to EC2 via SSH
-  uses: appleboy/ssh-action@v1.0.3
-  with:
-    host: ${{ secrets.EC2_HOST }}
-    username: ${{ secrets.EC2_USER }}
-    key: ${{ secrets.EC2_KEY }}
-    script: |
-      docker stop naturalfit || true
-      docker rm naturalfit || true
-      docker pull deploylynx/naturalfit-devsecops:latest
-      docker run -d -p 3000:3000 --name naturalfit deploylynx/naturalfit-devsecops:latest
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_KEY }}
+          script: |
+            docker stop naturalfit || true
+            docker rm naturalfit || true
+            docker pull deploylynx/naturalfit-devsecops:latest
+            docker run -d -p 3000:3000 --name naturalfit deploylynx/naturalfit-devsecops:latest
