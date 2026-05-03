@@ -10,20 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-    - name: Deploy to EC2 via SSH
-      uses: appleboy/ssh-action@v1.0.0
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USER }}
-        key: ${{ secrets.EC2_SSH_KEY }}
-        timeout: 60s
-        command_timeout: 10m
-        script: |
-          set -e
-          docker stop naturalfit || true
-          docker rm naturalfit || true
-          docker pull deploylynx/naturalfit-devsecops:latest
-          docker run -d -p 3000:3000 --name naturalfit deploylynx/naturalfit-devsecops:latest
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          timeout: 120s
+          command_timeout: 15m
+          script: |
+            set -e
+            echo "Starting deployment..."
+            docker stop naturalfit || true
+            docker rm naturalfit || true
+            docker pull deploylynx/naturalfit-devsecops:latest
+            docker run -d -p 3000:3000 --name naturalfit deploylynx/naturalfit-devsecops:latest
+            echo "Deployment completed"
