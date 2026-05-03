@@ -13,19 +13,30 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Deploy to EC2 via SSH
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
+          username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           timeout: 120s
           command_timeout: 15m
           script: |
             set -e
-            echo "Starting deployment..."
+            echo "🚀 Starting deployment..."
+
             docker stop naturalfit || true
             docker rm naturalfit || true
+
             docker pull deploylynx/naturalfit-devsecops:latest
+
             docker run -d -p 3000:3000 --name naturalfit deploylynx/naturalfit-devsecops:latest
-            echo "Deployment completed"
+
+            echo "✅ Deployment completed successfully"
