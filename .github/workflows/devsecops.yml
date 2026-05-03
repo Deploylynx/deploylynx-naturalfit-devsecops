@@ -19,7 +19,10 @@ jobs:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
+        timeout: 60s
+        command_timeout: 10m
         script: |
+          set -e
           docker stop naturalfit || true
           docker rm naturalfit || true
           docker pull deploylynx/naturalfit-devsecops:latest
