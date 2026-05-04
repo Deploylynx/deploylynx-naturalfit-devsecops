@@ -1,27 +1,35 @@
-# Production-Ready DevSecOps Pipeline (AWS | Kubernetes | CI/CD | Security Automation)
+# 🚀 Production-Ready DevSecOps CI/CD Pipeline (AWS | Docker | CI/CD | Security Automation)
 
-A DevSecOps CI/CD pipeline project developed by **Hina Atif** for **DeployLynx.com** as part of a professional project-based assignment. This project demonstrates a full DevSecOps workflow using **Node.js**, **Express**, **Docker**, **GitHub Actions**, and **Trivy security scanning**.
+A DevSecOps CI/CD pipeline project developed by **Hina Atif** for DeployLynx.com as a professional case study assignment.
+
+This project demonstrates a complete end-to-end DevSecOps workflow including automated deployment, containerization, monitoring, and security scanning.
 
 ---
 
 ## 📌 Project Overview
-This project demonstrates a complete **DevSecOps CI/CD pipeline** for deploying a containerized web application on AWS EC2 with automated deployment, monitoring, and security scanning.
 
-The system ensures **continuous integration, continuous delivery, observability, and security compliance**.
+This project implements a fully automated CI/CD pipeline to deploy a containerized Node.js application on AWS EC2.
+
+The system ensures:
+- Continuous Integration (CI)
+- Continuous Deployment (CD)
+- Infrastructure Monitoring
+- Security Scanning (DevSecOps)
 
 ---
 
-## 🏗️ Architecture Diagram
+## 🏗️ Architecture
 
-GitHub Repo
+
+GitHub Repository
 ↓
 GitHub Actions (CI/CD Pipeline)
 ↓
-Docker Build & Push
+Docker Image Build & Push
 ↓
 AWS EC2 Instance (Ubuntu)
 ↓
-Docker Container (NaturalFit App)
+Docker Container (Application)
 ↓
 NGINX Reverse Proxy (Port 80 → 3000)
 ↓
@@ -36,73 +44,68 @@ Grafana (Visualization Dashboard)
 
 ## ⚙️ Tech Stack
 
-- 🐙 GitHub Actions (CI/CD)
-- 🐳 Docker (Containerization)
-- ☁️ AWS EC2 (Cloud Deployment)
-- 🌐 NGINX (Reverse Proxy)
-- 📊 Prometheus (Monitoring)
-- 📈 Grafana (Dashboards)
-- 🔐 Trivy (Security Scanning)
+- GitHub Actions (CI/CD Automation)
+- Docker (Containerization)
+- AWS EC2 (Cloud Deployment)
+- NGINX (Reverse Proxy)
+- Prometheus (Monitoring)
+- Grafana (Visualization)
+- Trivy (Security Scanning)
 
 ---
 
 ## 🔁 CI/CD Workflow
 
 1. Developer pushes code to GitHub
-2. GitHub Actions pipeline is triggered
-3. Docker image is built automatically
+2. GitHub Actions pipeline triggers automatically
+3. Docker image is built
 4. Image is pushed to registry
 5. EC2 pulls latest image
-6. Container is deployed automatically
-7. Application becomes live
+6. Container is deployed
+7. Application goes live
 
 ---
 
 ## 🖥️ Deployment Flow
 
 
-Code → Build → Test → Dockerize → Push → Deploy → Monitor
+Code → Build → Dockerize → Push → Deploy → Monitor
 
 
 ---
 
 ## 📊 Monitoring Setup
 
-- **Prometheus**
-  - Collects system metrics
-  - Endpoint: `/targets`
-  - Status: UP ✔
+### Prometheus
+- Collects system metrics
+- Endpoint: `/targets`
+- Status: UP ✔
 
-- **Grafana**
-  - Visual dashboard
-  - Real-time monitoring
-  - Metrics visualization (`up = 1`)
+### Grafana
+- Real-time dashboard
+- Visualizes system health metrics
+- Displays `up = 1`
 
 ---
 
 ## 🔐 Security (DevSecOps Layer)
 
-- Trivy integrated into CI/CD pipeline
+- Trivy integrated in CI/CD pipeline
 - Scans Docker images for vulnerabilities
 - Detects CVEs (Critical / High / Medium / Low)
-- Ensures secure deployment pipeline
+- Ensures secure deployment workflow
 
 ---
 
 ## 🌍 Live Application
 
-- Application URL:  
-  `http://3.232.104.228`
-
-- Prometheus:  
-  `http://3.232.104.228:9090`
-
-- Grafana:  
-  `http://3.232.104.228:3001`
+- Application: http://3.232.104.228  
+- Prometheus: http://3.232.104.228:9090  
+- Grafana: http://3.232.104.228:3001  
 
 ---
 
-## 📸 Screenshots (Portfolio Evidence)
+## 📸 Screenshots
 
 - GitHub Actions successful pipeline
 - Docker containers running on EC2
@@ -112,86 +115,29 @@ Code → Build → Test → Dockerize → Push → Deploy → Monitor
 
 ---
 
-## 🧠 Key DevOps Learnings
+## 🧠 Key Learnings
 
 - CI/CD automation using GitHub Actions
 - Docker container lifecycle management
-- AWS EC2 deployment and networking
-- Reverse proxy configuration using NGINX
+- AWS EC2 deployment
+- NGINX reverse proxy configuration
 - Monitoring with Prometheus & Grafana
-- Security scanning with Trivy (DevSecOps)
+- Security scanning using Trivy
 
 ---
 
 ## 🏆 Business Value
 
 This project demonstrates:
-- Production-ready deployment pipeline
-- Automated software delivery system
+- Production-ready DevOps pipeline
+- Fully automated deployment system
 - Observability and monitoring setup
-- Security-first DevSecOps approach
+- Security-first DevSecOps implementation
 
 ---
 
-## 🚀 Status
+## 👨‍💻 Author
 
-✔ CI/CD Pipeline: Active  
-✔ Deployment: Automated  
-✔ Monitoring: Active  
-✔ Security: Integrated  
-✔ Production: Live  
-```
+**Hina Atif**
 
----
-
-# 🧠 PROFESSIONAL ARCHITECTURE IMAGE (USE THIS FOR LINKEDIN)
-
-If you want, I can also generate a **clean diagram image**, but here is a ready version you can use:
-
-```
-+-------------------+
-|   GitHub Repo     |
-+--------+----------+
-         |
-         v
-+-------------------+
-| GitHub Actions    |
-| CI/CD Pipeline    |
-+--------+----------+
-         |
-         v
-+-------------------+
-| Docker Image Build|
-+--------+----------+
-         |
-         v
-+-------------------+
-| AWS EC2 Instance  |
-+--------+----------+
-         |
-         v
-+-------------------+
-| NGINX Reverse     |
-| Proxy (Port 80)   |
-+--------+----------+
-         |
-         v
-+-------------------+
-| Web Application   |
-+-------------------+
-
-         +-------------------+
-         | Prometheus        |
-         | Grafana Dashboard |
-         +-------------------+
-```
-
-
-👨‍💻 Author & Project Info
-Hina Atif – Project Developer
-This project was completed as a case study for DeployLynx.com, showcasing hands-on DevSecOps and cloud infrastructure skills.
-
-Live Deployed Site: View on Vercel
-
-
-
+Project developed as part of a professional DevSecOps case study for DeployLynx.com
