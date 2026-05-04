@@ -4,90 +4,196 @@ A DevSecOps CI/CD pipeline project developed by **Hina Atif** for **DeployLynx.c
 
 ---
 
-## 📝 Project Overview
+# 🚀 DeployLynx NaturalFit DevSecOps CI/CD Pipeline
 
-**Objective:** Build and secure a Node.js application with a production-ready CI/CD pipeline, incorporating automated builds, dependency scanning, and containerization.
+## 📌 Project Overview
+This project demonstrates a complete **DevSecOps CI/CD pipeline** for deploying a containerized web application on AWS EC2 with automated deployment, monitoring, and security scanning.
 
-**Tech Stack & Tools Used:**
-
-- **Node.js 18 (Alpine)** – Lightweight, secure Node.js environment
-- **Express** – Robust web server framework
-- **Docker** – Containerization of the application
-- **GitHub Actions** – CI/CD workflow automation
-- **Trivy** – Container image vulnerability scanning
-- **Vercel** – Deployment for the live production environment
+The system ensures **continuous integration, continuous delivery, observability, and security compliance**.
 
 ---
 
-## 📂 Project Structure
+## 🏗️ Architecture Diagram
 
-```text
-deploylynx-naturalfit-devsecops/
-│
-├── .github/
-│   └── workflows/
-│       └── devsecops.yml   # GitHub Actions workflow
-├── app/                    # Node.js app source code
-│   ├── public/             # Static frontend files
-│   │   ├── index.html
-│   │   └── style.css
-│   └── screenshots/        # Project documentation images
-│       ├── local.png
-│       └── vercel.png
-├── Dockerfile              # Container build instructions
-├── .gitignore              # Files excluded from version control
-└── README.md
+GitHub Repo
+↓
+GitHub Actions (CI/CD Pipeline)
+↓
+Docker Build & Push
+↓
+AWS EC2 Instance (Ubuntu)
+↓
+Docker Container (NaturalFit App)
+↓
+NGINX Reverse Proxy (Port 80 → 3000)
+↓
+User Access via Browser
+↓
+Prometheus (Metrics Collection)
+↓
+Grafana (Visualization Dashboard)
 
----
-
-⚡ Setup Instructions
-Clone Repository
-
-Bash
-git clone [https://github.com/Deploylynx/deploylynx-naturalfit-devsecops.git](https://github.com/Deploylynx/deploylynx-naturalfit-devsecops.git)
-cd deploylynx-naturalfit-devsecops
-
----
-Run Locally (with Node.js)
-Bash
-cd app
-npm install
-node index.js
-
-Build & Run with Docker
-Bash
-docker build -t naturalfit-app .
-docker run -p 3000:3000 naturalfit-app
-
----
-🖥️ Project Screenshots
-![Local Site](./app/screenshots/local.png)
-![Deployed Site](./app/screenshots/vercel.png)
----
-
-🔒 DevSecOps Implementation
-Security Middleware (Helmet)
-We use Helmet.js to secure Express apps by setting various HTTP headers.
-
-JavaScript
-const helmet = require('helmet');
-app.use(helmet());
 
 ---
 
-Repository Management & Scanning
-Clean Repo: Sensitive files like .env and bulky folders like node_modules are strictly ignored.
+## ⚙️ Tech Stack
 
-Vulnerability Scanning: Trivy scans every Docker build automatically within the GitHub Actions pipeline to catch security flaws before deployment.
+- 🐙 GitHub Actions (CI/CD)
+- 🐳 Docker (Containerization)
+- ☁️ AWS EC2 (Cloud Deployment)
+- 🌐 NGINX (Reverse Proxy)
+- 📊 Prometheus (Monitoring)
+- 📈 Grafana (Dashboards)
+- 🔐 Trivy (Security Scanning)
+
+---
+
+## 🔁 CI/CD Workflow
+
+1. Developer pushes code to GitHub
+2. GitHub Actions pipeline is triggered
+3. Docker image is built automatically
+4. Image is pushed to registry
+5. EC2 pulls latest image
+6. Container is deployed automatically
+7. Application becomes live
 
 ---
 
-Dockerfile Highlights
-Base Image: Uses node:18-alpine for a reduced attack surface.
+## 🖥️ Deployment Flow
 
-Principle of Least Privilege: Copies only necessary package files before source code to optimize build caching.
+
+Code → Build → Test → Dockerize → Push → Deploy → Monitor
+
 
 ---
+
+## 📊 Monitoring Setup
+
+- **Prometheus**
+  - Collects system metrics
+  - Endpoint: `/targets`
+  - Status: UP ✔
+
+- **Grafana**
+  - Visual dashboard
+  - Real-time monitoring
+  - Metrics visualization (`up = 1`)
+
+---
+
+## 🔐 Security (DevSecOps Layer)
+
+- Trivy integrated into CI/CD pipeline
+- Scans Docker images for vulnerabilities
+- Detects CVEs (Critical / High / Medium / Low)
+- Ensures secure deployment pipeline
+
+---
+
+## 🌍 Live Application
+
+- Application URL:  
+  `http://3.232.104.228`
+
+- Prometheus:  
+  `http://3.232.104.228:9090`
+
+- Grafana:  
+  `http://3.232.104.228:3001`
+
+---
+
+## 📸 Screenshots (Portfolio Evidence)
+
+- GitHub Actions successful pipeline
+- Docker containers running on EC2
+- Prometheus targets showing **UP status**
+- Grafana dashboard visualization
+- Live application UI
+
+---
+
+## 🧠 Key DevOps Learnings
+
+- CI/CD automation using GitHub Actions
+- Docker container lifecycle management
+- AWS EC2 deployment and networking
+- Reverse proxy configuration using NGINX
+- Monitoring with Prometheus & Grafana
+- Security scanning with Trivy (DevSecOps)
+
+---
+
+## 🏆 Business Value
+
+This project demonstrates:
+- Production-ready deployment pipeline
+- Automated software delivery system
+- Observability and monitoring setup
+- Security-first DevSecOps approach
+
+---
+
+## 👨‍💻 Author
+
+**DeployLynx NaturalFit DevSecOps Project**
+
+---
+
+## 🚀 Status
+
+✔ CI/CD Pipeline: Active  
+✔ Deployment: Automated  
+✔ Monitoring: Active  
+✔ Security: Integrated  
+✔ Production: Live  
+```
+
+---
+
+# 🧠 PROFESSIONAL ARCHITECTURE IMAGE (USE THIS FOR LINKEDIN)
+
+If you want, I can also generate a **clean diagram image**, but here is a ready version you can use:
+
+```
++-------------------+
+|   GitHub Repo     |
++--------+----------+
+         |
+         v
++-------------------+
+| GitHub Actions    |
+| CI/CD Pipeline    |
++--------+----------+
+         |
+         v
++-------------------+
+| Docker Image Build|
++--------+----------+
+         |
+         v
++-------------------+
+| AWS EC2 Instance  |
++--------+----------+
+         |
+         v
++-------------------+
+| NGINX Reverse     |
+| Proxy (Port 80)   |
++--------+----------+
+         |
+         v
++-------------------+
+| Web Application   |
++-------------------+
+
+         +-------------------+
+         | Prometheus        |
+         | Grafana Dashboard |
+         +-------------------+
+```
+
 
 👨‍💻 Author & Project Info
 Hina Atif – Project Developer
