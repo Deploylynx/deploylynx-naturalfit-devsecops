@@ -103,12 +103,11 @@ Prometheus → Grafana
 <img width="1266" height="139" alt="natttt" src="https://github.com/user-attachments/assets/dc83b129-1986-42ca-93d8-923f1a5ce8dc" />
 
 ### Prometheus Targets
-![Prometheus](<img width="1887" height="244" alt="Promethious" src="https://github.com/user-attachments/assets/2ed6b8cb-d310-4f7c-b149-a6067dd2f606" />
-)
+<img width="1887" height="244" alt="Promethious" src="https://github.com/user-attachments/assets/5b4cdc30-76da-46b5-a88d-7bc141b05a83" />
 
 ### Grafana Dashboard
-![Grafana](<img width="697" height="631" alt="Grafana" src="https://github.com/user-attachments/assets/c64681d9-2fee-4775-846d-93cf081c7883" />
-)
+<img width="697" height="631" alt="Grafana" src="https://github.com/user-attachments/assets/06a67e7c-fa12-4cde-bb4e-293d38366564" />
+
 
 <img width="916" height="330" alt="Grafana Time" src="https://github.com/user-attachments/assets/6c966bb0-cbaa-4050-adc6-bdb34a0787fa" />
 
