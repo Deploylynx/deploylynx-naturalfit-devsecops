@@ -4,8 +4,6 @@ A DevSecOps CI/CD pipeline project developed by **Hina Atif** for **DeployLynx.c
 
 ---
 
-# 🚀 DeployLynx NaturalFit DevSecOps CI/CD Pipeline
-
 ## 📌 Project Overview
 This project demonstrates a complete **DevSecOps CI/CD pipeline** for deploying a containerized web application on AWS EC2 with automated deployment, monitoring, and security scanning.
 
